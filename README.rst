@@ -24,27 +24,14 @@ Installation
 
     .. code-block:: bash
 
-        $ git clone --recurse-submodules git@github.com:cscart/development-docker.git ~/srv
-        $ cd ~/srv
-
-#. Create the directory to store CS-Cart files:
-
-    .. code-block:: bash
-
-        $ mkdir -p app/www
-
-#. Clone CS-Cart repository or unpack the distribution archive into the ``app/www`` directory.
-#. Enable the default application config for nginx:
-
-    .. code-block:: bash
-
-        $ cp config/nginx/app.conf.example config/nginx/app.conf
+        $ git clone --recurse-submodules git@github.com:searchanise/cs-cart-docker.git searchanise-cs-cart-docker
+        $ cd searchanise-cs-cart-docker
 
 #. Run application containers:
 
     .. code-block:: bash
 
-        $ make -f Makefile run
+        $ docker-compose up -d
 
 ----------------
 MySQL connection
@@ -106,14 +93,14 @@ You can read about configuring PHPStorm to work with Docker and xDebug 3 in the 
 
     .. code-block:: bash
 
-        $ git clone --recurse-submodules git@github.com:cscart/development-docker.git ~/srv
-        $ cd ~/srv
+        $ git clone --recurse-submodules git@github.com:searchanise/cs-cart-docker.git searchanise-cs-cart-docker
+        $ cd searchanise-cs-cart-docker
 
 #. Запустите контейнеры приложения:
 
     .. code-block:: bash
 
-        $ make -f Makefile run
+        $ docker-compose up -d
 
 -------------------
 Подключение к MySQL
