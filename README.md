@@ -18,6 +18,11 @@ git clone --recurse-submodules git@github.com:searchanise/cs-cart-docker.git cs-
 cd cs-cart-docker
 ```
 
+* Create own env file:
+```bash
+cp .env.example .env
+```
+
 * If you do not have access to `https://github.com/searchanise/cs-cart` repository, simple unpack the distribution archive into the ``app/www`` directory.
 
 * Run application containers:
@@ -84,7 +89,10 @@ cd cs-cart-docker
 ```
 
 * Если у вас нет доступа к `https://github.com/searchanise/cs-cart` репозиторию, просто скачайте и распакуйте ваш CS-Cart в папку `app/www`.
-
+* Создайте свой env-файл:
+```bash
+cp .env.example .env
+```
 * Запустите контейнеры docker командой:
 
 ```bash
