@@ -14,11 +14,11 @@ Docker-based development environment:
 * Clone the environment repository:
 
 ```bash
-git clone --recurse-submodules git@github.com:cscart/development-docker.git cs-cart-docker
+git clone --recurse-submodules git@github.com:searchanise/cs-cart-docker.git cs-cart-docker
 cd cs-cart-docker
 ```
 
-* If you do not have access to `https://github.com/cscart/cs-cart` repository, simple unpack the distribution archive into the ``app/www`` directory.
+* If you do not have access to `https://github.com/searchanise/cs-cart` repository, simple unpack the distribution archive into the ``app/www`` directory.
 
 * Run application containers:
 
@@ -79,11 +79,11 @@ You can read about configuring PHPStorm to work with Docker and xDebug 3 in the 
 * Склонируйте репозиторий с окружением:
 
 ```bash
-git clone --recurse-submodules git@github.com:cscart/development-docker.git cs-cart-docker
+git clone --recurse-submodules git@github.com:searchanise/cs-cart-docker.git cs-cart-docker
 cd cs-cart-docker
 ```
 
-* Если у вас нет доступа к `https://github.com/cscart/cs-cart` репозиторию, просто скачайте и распакуйте ваш CS-Cart в папку `app/www`.
+* Если у вас нет доступа к `https://github.com/searchanise/cs-cart` репозиторию, просто скачайте и распакуйте ваш CS-Cart в папку `app/www`.
 
 * Запустите контейнеры docker командой:
 
