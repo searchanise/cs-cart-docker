@@ -10,26 +10,7 @@ Docker-based development environment:
 
 ### Installation
 
-* Install `git`, `docker` and `docker-compose`.
-* Clone the environment repository:
-
-```bash
-git clone --recurse-submodules git@github.com:searchanise/cs-cart-docker.git cs-cart-docker
-cd cs-cart-docker
-```
-
-* Create own env file:
-```bash
-cp .env.example .env
-```
-
-* If you do not have access to `https://github.com/searchanise/cs-cart` repository, simple unpack the distribution archive into the ``app/www`` directory.
-
-* Run application containers:
-
-```bash
-docker-compose up -d
-```
+* Follow [Standard Docker application installation instructions](https://github.com/searchanise/environment/tree/master/docs/Docker-application-installation.md), REPOSITORY_URL=git@github.com:searchanise/cs-cart-docker.git
 
 * Add new hosts files to /etc/hosts:
 
