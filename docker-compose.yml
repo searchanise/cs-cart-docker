@@ -79,7 +79,6 @@ services:
       CSCART_HOST: "php8.1.cs-cart.local:${CSCART_PORT}"
   wait:
     image: hello-world:latest
-    entrypoint: []
     depends_on:
       php7.4:
         condition: service_healthy
