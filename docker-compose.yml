@@ -47,6 +47,7 @@ services:
         condition: service_healthy
     healthcheck:
       test: "(ps -lA | grep php-fpm) || exit 1"
+      retries: 30
   php7.3:
     << : *default-php
     build:
