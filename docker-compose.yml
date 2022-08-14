@@ -45,6 +45,9 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+    healthcheck:
+      test: "(ps -lA | grep php-fpm) || exit 1"
+      retries: 30
   php7.3:
     << : *default-php
     build:
@@ -75,3 +78,8 @@ services:
     environment:
       CSCART_INSTALL: "no"
       CSCART_HOST: "php8.1.cs-cart.local:${CSCART_PORT}"
+  wait:
+    image: hello-world:latest
+    depends_on:
+      php7.4:
+        condition: service_healthy
