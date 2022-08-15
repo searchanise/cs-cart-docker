@@ -58,6 +58,9 @@ services:
     environment:
       CSCART_INSTALL: "no"
       CSCART_HOST: "php7.3.cs-cart.local:${CSCART_PORT}"
+    depends_on:
+      php7.4:
+        condition: service_healthy
   php8.0:
     << : *default-php
     build:
@@ -68,6 +71,9 @@ services:
     environment:
       CSCART_INSTALL: "no"
       CSCART_HOST: "php8.0.cs-cart.local:${CSCART_PORT}"
+    depends_on:
+      php7.4:
+        condition: service_healthy
   php8.1:
     << : *default-php
     build:
@@ -78,6 +84,9 @@ services:
     environment:
       CSCART_INSTALL: "no"
       CSCART_HOST: "php8.1.cs-cart.local:${CSCART_PORT}"
+    depends_on:
+      php7.4:
+        condition: service_healthy
   wait:
     image: hello-world:latest
     depends_on:
