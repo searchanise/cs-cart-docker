@@ -8,13 +8,14 @@ services:
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
     volumes:
-      - ./app/db:/var/lib/mysql
+      - db:/var/lib/mysql
     ports:
       - "${MYSQL_LOCALHOST_PORT}:3306"
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-p$MYSQL_ROOT_PASSWORD"]
-      timeout: 20s
-      retries: 10
+      test: "mysql -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE > /dev/null 2>&1"
+      interval: 1s
+      timeout: 10s
+      retries: 50
   nginx:
     image: nginx:alpine
     volumes:
@@ -46,8 +47,9 @@ services:
       mysql:
         condition: service_healthy
     healthcheck:
+      interval: 1s
+      retries: 150
       test: "(ps -lA | grep php-fpm) || exit 1"
-      retries: 30
   php7.3:
     << : *default-php
     build:
@@ -92,3 +94,5 @@ services:
     depends_on:
       php7.4:
         condition: service_healthy
+volumes:
+  db:
