@@ -49,7 +49,7 @@ services:
         condition: service_healthy
     healthcheck:
       interval: 1s
-      retries: 150
+      retries: 300
       test: "(ps -lA | grep php-fpm) || exit 1"
   php7.3:
     << : *default-php
